@@ -1,1 +1,9 @@
 language: java
+
+addons:
+  sonarcloud:
+    organization: "thomaspalle-github"
+
+    script:
+      - mvn org.jacoco:jacoco-maven-plugin:plugin:prepare-agent package
+      sonar:sonar -Dsonar.projectKey=Thomaspalle_ipi-java-350-ex
